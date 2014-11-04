@@ -1,0 +1,46 @@
+<div style="min-height: 570px; max-width: 1440px; background-color: #105cb6; position: relative; z-index: 10; overflow: scroll;"
+  ng-mousemove="mousemove($event)">
+
+  <!-- 卓キャプション START -->
+  <div style="width: 200px; min-height: 30px; max-height: 30px; background-color: #2b542c; position: absolute; z-index: 100;">
+  </div>
+  <!-- 卓キャプション END -->
+
+  <!-- 時間ヘッダ START -->
+  <div style="min-width: 1440px; min-height: 30px; max-height: 30px; background-color: #7a43b6; position: absolute; z-index: 10; padding-left: 200px; text-align: center;">
+    <div ng-repeat="headerItem in chartModel.headerItems" style="width: 60px; height: 30px; position: absolute; margin-left: {{60 * $index}}px">
+      {{headerItem.label}}
+    </div>
+  </div>
+  <!-- 時間ヘッダ END -->
+
+  <!-- 卓情報 START -->
+  <div style="background-color: #ac2925; position: absolute; padding-top: 30px;">
+    <div ng-repeat="tableItem in tableItems" style="position: absolute; height: 60px; width: 1700px; margin-top: {{$index * 60}}px; border-bottom: solid 1px #000000;">
+      予約者名<br/>
+      人数<br/>
+      FROM〜TO
+    </div>
+  </div>
+  <!-- 卓情報 END -->
+
+  <!-- 予約情報 START -->
+  <div style="position: absolute; padding-top: 30px; padding-left: 200px;">
+    <div style="width: 300px; height: 30px; background-color: #d58512;"></div>
+  </div>
+  <!-- 予約情報 END -->
+
+  <!-- 縦線 START -->
+  <div style="position: absolute; z-index: 200; padding-left: 200px;">
+    <div ng-repeat="headerItem in chartModel.headerItems" style="width: 60px; height: 930px; position: absolute; border-left: 1px solid #000000; margin-left: {{$index * 60}}px">
+      <div ng-repeat="lineItem in lineItems" style="margin-top: 30px; width: 15px; height: 930px; position: absolute; margin-left: {{$index * 15}}px; border-right: 1px dashed #000000;">
+      </div>
+    </div>
+  </div>
+  <!-- 縦線 END -->
+
+  <div ng-mousedown="mousedown($event)" style="position: absolute; z-index: 1000; margin-top: 30px; margin-left: 200px; height: 900px; width: 1000px;">
+
+  </div>
+
+</div>
